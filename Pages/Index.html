@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rameez Rizvan</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      
+    }
+    #fullscreen-div {
+      width: 100%;
+      height: 100%;
+    }
+    h1 {
+      font-size: 11vmin;
+      color: rgb(231, 233, 235);
+      text-align: left;
+      font-family: Lato, sans-serif;
+      font-weight: 700;
+      margin: 16rem 0 1rem 2rem;
+      margin-left: 32%;
+    }
+    h3 {
+      font-size: 6vmin;
+      color: rgb(231, 233, 235);
+      text-align: left;
+      font-family: Lato, sans-serif;
+  /*  font-weight: 100; */
+      margin: 1rem 0 1rem 2rem;
+      margin-left: 40%;
+    }
+    i{
+      font-size: 3.5vmin;
+      color: rgb(231, 233, 235);
+      font-family: Lato, sans-serif;
+      margin-left: 5rem;
+      margin-top: -10px;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .social-icons {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      margin-left: -80px;
+    }
+
+    .social-icons li {
+      display: inline-block;
+      margin: 0 10px;
+      
+    }
+
+    .social-icons li a {
+      color: white;
+      font-size: 24px; 
+    }
+    .social-icons li a :hover{
+      transform: scale(1.5);
+      transition: transform .1s;
+      color: rgb(255, 255, 255);
+    }
+    #links{
+      margin-left: -60px;
+      justify-content: space-between;
+    }
+    #small-test {
+      font-size: 2.5vmin;
+    }
+    #small-test:first-child {
+      margin-right: -20px; /* Adjust the margin as needed */
+    }
+    #small-test:hover{
+      transform: scale(1.5);
+      transition: transform .1s;
+      color: rgb(255, 255, 255);
+    }
+
+    .button-17 {
+      align-items: center;
+      appearance: none;
+      background-color: rgba(231, 233, 235, 0.929);
+      border-radius: 24px;
+      border-style: none;
+      box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+      box-sizing: border-box;
+      color: #3c4043;
+      cursor: pointer;
+      display: inline-flex;
+      fill: currentcolor;
+      font-family: "Google Sans",Roboto,Arial,sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      height: 48px;
+      justify-content: center;
+      letter-spacing: .25px;
+      line-height: normal;
+      max-width: 100%;
+      overflow: visible;
+      padding: 2px 24px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: auto;
+      will-change: transform,opacity;
+      z-index: 0;
+      margin-left: 9rem;
+      margin-top: 3rem;
+      /* position:fixed; */
+    }
+    .button-17:hover{
+      background-color: #fff;
+    }
+    .more{
+      color: black ;
+      text-decoration: none;
+    }
+    
+
+
+/* Typewriter effect 1 */
+@keyframes typing {
+  0.0000%, 27.3488% { content: ""; }
+  1.1395%, 26.2093% { content: "d"; }
+  2.2791%, 25.0698% { content: "de"; }
+  3.4186%, 23.9302% { content: "dev"; }
+  4.5581%, 22.7907% { content: "deve"; }
+  5.6977%, 21.6512% { content: "devel"; }
+  6.8372%, 20.5116% { content: "develo"; }
+  7.9767%, 19.3721% { content: "develop"; }
+  9.1163%, 18.2326% { content: "develope"; }
+  10.2558%, 17.0930% { content: "developer"; }
+
+  30.7674%, 51.2791% { content: "l"; }
+  31.9070%, 50.1395% { content: "le"; }
+  33.0465%, 49.0000% { content: "lea"; }
+  34.1860%, 47.8605% { content: "lear"; }
+  35.3256%, 46.7209% { content: "learn"; }
+  36.4651%, 45.5814% { content: "learne"; }
+  37.6047%, 44.4419% { content: "learner"; }
+
+  54.6977%, 75.2093% { content: "d"; }
+  55.8372%, 74.0698% { content: "de"; }
+  56.9767%, 72.9302% { content: "des"; }
+  58.1163%, 71.7907% { content: "desi"; }
+  59.2558%, 70.6512% { content: "desig"; }
+  60.3953%, 69.5116% { content: "design"; }
+  61.5349%, 68.3721% { content: "designe"; }
+  62.4349%, 67.1721% { content: "designer"; }
+
+
+  78.6279%, 96.8605% { content: ""; }
+  79.7674%, 95.7209% { content: "h"; }
+  80.9070%, 94.5814% { content: "hu"; }
+  82.0465%, 93.4419% { content: "hum"; }
+  83.1860%, 92.3023% { content: "huma"; }
+  84.3256%, 91.1628% { content: "human"; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1px solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+  
+  @keyframes sequencePopup {
+    0%, 100% { content: "developer"; }
+    25% { content: "writer"; }
+    50% { content: "reader"; }
+    75% { content: "human"; }
+  }
+
+  .typewriter::before {
+    content: "developer";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+
+@media (max-width: 1300px) {
+  h1{
+    margin-left: 29%;
+  }
+}
+@media (max-width: 1200px) {
+  h1{
+    margin-left: 27%;
+  }
+  h3{
+    margin-left: 38%;
+  }
+}
+@media (max-width: 1200px) {
+  h1{
+    margin-left: 24%;
+  }
+  h3{
+    margin-left: 37%;
+  }
+}
+@media (max-width: 1000px) {
+  h1{
+    margin-left: 20%;
+  }
+  h3{
+    margin-left: 36%;
+  }
+}
+@media (max-width: 1024px) {
+  h1{
+    margin-left: 14%;
+  }
+  h3{
+    margin-left: 32%;
+  }
+  .button-17{
+    margin-left: 28%;
+  }
+}
+@media (max-width: 900px) {
+  h1{
+    margin-left: 19%;
+  }
+  h3{
+    margin-left: 33%;
+  }
+}
+@media (max-width: 800px) {
+  h1{
+    margin-left: 14%;
+  }
+  h3{
+    margin-left: 33%;
+  }
+}
+@media (max-width: 820px) {
+  h1{
+    margin-left: 14%;
+  }
+  h3{
+    margin-left: 33%;
+  }
+}
+
+@media (max-width: 700px) {
+  h3{
+    margin-left: 31%;
+  }
+  .button-17{
+    margin-left: 28%;
+  }
+}
+@media (max-width: 450px) {
+  i{
+      margin-left: 4rem;
+    }
+}
+
+
+
+  </style>
+</head>
+<body id="body">
+  <div >
+    <h1>
+      Rameez Rizvan
+    </h1>
+    <h3>I'm a&nbsp;<span class="typewriter"></span><br><span id="links">
+      <button class="button-17" role="button"><a href="http://127.0.0.1:5500/Pages/Projects.html" class="more">Projects ></a></button>
+    </h3>
+    
+    <footer>
+      <ul class="social-icons">
+        <li><a href="https://www.linkedin.com/in/rameez-rizvan-1276281a4/"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/RameezRizvan"><i class="fab fa-github"></i></a></li>
+        <li><a href="tel:7558800907"><i class="fas fa-phone"></i></a></li>
+        <li><a href="mailto: rameezrizvan04@gmail.com"><i class="fas fa-envelope"></i></a></li>
+      </ul>
+    </footer>
+  </div>
+
+
+  <script>
+    VANTA.WAVES({
+      el: "#body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x436a
+    })
+    </script>
+</body>
+</html>
